@@ -16,4 +16,6 @@ while applying PDB you can select one in between minAvailable and maxUnavailable
 <br> <br/>
 In this example I have created two pods(using replicas: 2) and with the selector (app: nginx). Pod disruption budget is created with minimum 33% pods always be available. 
 ![image](https://github.com/singhritesh85/terraform-azure/assets/56765895/36d6aea6-d295-41bc-9615-fce73c76f140)
+![image](https://github.com/kamalmohan217/terraform-azure/assets/128888356/c43edcd0-1cbf-497b-9c55-27496d63a8a9)
+
 As shown in the screenshot above not all the pods are evicted in one go as 33% of the 2 (total pods) is 0.66 which is rounded up to the nearest integer 1 (Reference = https://kubernetes.io/docs/tasks/run-application/configure-pdb/). Hence 1 pod will always be available for serving the request and another 1 pod (as total pods was 2) will be evicted in one go which is also verified with the attached screenshot.
